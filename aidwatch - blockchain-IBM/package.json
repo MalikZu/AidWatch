@@ -1,0 +1,36 @@
+{
+  "engines": {
+    "composer": "^0.19.13"
+  },
+  "name": "aidwatch",
+  "version": "0.0.1",
+  "description": "Aidwatch is a way to protect corrption in non-profit org.",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/aidwatch.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
+  },
+  "keywords": [
+    "composer",
+    "composer-network"
+  ],
+  "author": "Aurn",
+  "email": "aurn@angelhack.cim",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "^0.19.13",
+    "composer-cli": "^0.19.13",
+    "composer-client": "^0.19.13",
+    "composer-common": "^0.19.13",
+    "composer-connector-embedded": "^0.19.13",
+    "composer-cucumber-steps": "^0.19.13",
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "cucumber": "^2.2.0",
+    "eslint": "latest",
+    "nyc": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}
